@@ -7,18 +7,15 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 clean:
-	$(RM) $(NAME) *~
+	$(RM) *~ $(NAME)
 
 oclean:
-	$(RM) $(filter %.o, $(wildcard *.o))
+	$(RM) $(wildcard *.o)
 
 fclean: clean oclean
 
 re: fclean all
-
-main.o: main.c m.h
-school.o: school.c m.h
