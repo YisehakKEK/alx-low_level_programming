@@ -1,28 +1,24 @@
 # Advanced Makefile for "school" executable
 
-CC := gcc
-SRC := main.c school.c
-OBJ := main.o school.o
-NAME := school
-CFLAGS := -Wall -Werror -Wextra -pedantic
+CC = gcc
+SRC = main.c school.c
+NAME = school
+CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
-
-main.o: main.c m.h
-	$(CC) $(CFLAGS) -c main.c -o main.o
-
-school.o: school.c m.h
-	$(CC) $(CFLAGS) -c school.c -o school.o
+$(NAME):
+	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 clean:
-	$(RM) *~ $(NAME)
+	$(RM) $(NAME) *~
 
 oclean:
-	$(RM) $(OBJ)
+	$(RM) $(filter %.o, $(wildcard *.o))
 
 fclean: clean oclean
 
 re: fclean all
+
+main.o: main.c m.h
+school.o: school.c m.h
