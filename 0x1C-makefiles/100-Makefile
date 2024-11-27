@@ -11,10 +11,10 @@ $(NAME): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 clean:
-	$(RM) *~ $(NAME)
+	$(RM) $(NAME) *~
 
 oclean:
-	$(RM) $(wildcard *.o)
+	@if [ -f $(wildcard *.o) ]; then $(RM) $(wildcard *.o); fi
 
 fclean: clean oclean
 
