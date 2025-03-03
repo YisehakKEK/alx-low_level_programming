@@ -3,25 +3,28 @@
 #include <stdio.h>
 
 /**
- * main - Prints the last digit of a number
- *
- * Return: Always 0 (Success)
+ * main - Prints a text according number
+ * Return: Always (Success)
  */
 int main(void)
 {
-    int n, last_digit;
+	int n, lastd;
 
-    srand(time(0));
-    n = rand() - RAND_MAX / 2;
-    last_digit = n % 10;
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+	lastd = n % 10;
 
-    printf("Last digit of %d is %d", n, last_digit);
-    if (last_digit > 5)
-        printf(" and is greater than 5\n");
-    else if (last_digit == 0)
-        printf(" and is 0\n");
-    else
-        printf(" and is less than 6 and not 0\n");
-
-    return 0;
+	if (lastd > 5)
+	{
+	printf("Last digit of %d is %d and is greater than 5\n", n, lastd);
+	}
+	else if (lastd == 0)
+	{
+	printf("Last digit of %d is %d and is 0\n", n, lastd);
+	}
+	else if (lastd < 6 && lastd != 0)
+	{
+	printf("Last digit of %d is %d and is less than 6 and not 0\n", n, lastd);
+	}
+	return (0);
 }
