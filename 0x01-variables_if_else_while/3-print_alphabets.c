@@ -1,19 +1,20 @@
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 /**
- * main - Prints the alphabet in lowercase and then in uppercase.
- *
+ * main - Entry point
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-    char c;
+	char low;
 
-    for (c = 'a'; c <= 'z'; c++)
-        _putchar(c);
-    for (c = 'A'; c <= 'Z'; c++)
-        _putchar(c);
-    _putchar('\n');
-
-    return (0);
+	for (low = 'a'; low <= 'z'; low++)
+	putchar(low);
+	for (low = 'A'; low <= 'Z'; low++)
+	putchar(low);
+	putchar('\n');
+	
+	return (0);
 }
